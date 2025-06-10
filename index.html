@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hand Cricket Game</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="theme-color" content="#fdf6e3" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" sizes="192x192" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+
+<div class="theme-switcher">
+    <label>🎨 Theme:
+      <select id="themeSelect">
+        <option value="classic">Classic</option>
+        <option value="neon">Neon</option>
+        <option value="sunset">Sunset</option>
+      </select>
+    </label>
+</div>
+<div>
+  <h1>HAND CRICKET!</h1>
+
+  <div id="display_panel">
+    <p id="player_names">
+      Welcome to Hand Cricket!
+    <p id = "smallhead">Please submit your name to begin</p></p>
+    <div class="action-buttons">
+      <button id="startgame" disabled>Start Game</button>
+      <button id="resetgame">Reset Game</button>
+    </div>
+    <form id="name_form">
+        <label for="guestname">
+          Name: <input type="text" id="guestname" name="name" />
+        </label>
+        <button id="submit_name_btn" type="button">Submit</button>
+      </form>
+  </div>
+
+  <p id="score_board"></p>
+  
+  <div id="emoji_display" class="emoji-display">
+    <div class="emoji-box">
+      <div class="label">
+        You <span id="you_role" class="role-label"></span>
+      </div>
+      <div id="human_emoji" class="emoji">✋</div>
+    </div>
+    <div class="emoji-box">
+      <div class="label">
+        Computer <span id="computer_role" class="role-label"></span>
+      </div>
+      <div id="computer_emoji" class="emoji">✌️</div>
+    </div>
+  </div>
+  
+  <div id="btns_container">
+    <button class="btns" value="1" disabled>1</button>
+    <button class="btns" value="2" disabled>2</button>
+    <button class="btns" value="3" disabled>3</button>
+    <button class="btns" value="4" disabled>4</button>
+    <button class="btns" value="5" disabled>5</button>
+    <button class="btns" value="6" disabled>6</button>
+  </div>
+
+  <p id="result"></p>
+</div>
+  <script src="script.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function() {
+        navigator.serviceWorker.register("service-worker.js");
+      });
+    }
+  </script>
+</body>
+</html>
